@@ -4,12 +4,11 @@
     <div class="dialog">
         <div class="dialog-title">
             <h2>@Pizza.Special.Name</h2>
-            @Pizza.Special.Description
         </div>
         <form class="dialog-body">
             <div>
                 <label>Size:</label>
-                <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" />
+                <input type="range" min="@Pizza.MinimumSize" max="@Pizza.MaximumSize" step="1" @bind="Pizza.Size" @bind:event="oninput" />
                 <span class="size-label">
                     @(Pizza.Size)" (£@(Pizza.GetFormattedTotalPrice()))
                 </span>
@@ -25,6 +24,8 @@
         </div>
     </div>
 </div>
+
+
 
 @code {
     [Parameter] public Pizza Pizza {get; set;}
