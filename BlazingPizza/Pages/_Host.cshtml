@@ -1,6 +1,8 @@
 ﻿@page "/"
+
 @namespace BlazingPizza.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +49,8 @@
           document.querySelector('#progressSpinner').remove();
         }
     };
+
+    window.disableElement = (element) => element.disabled = "disabled";
 </script>
     </body>
 </html>
